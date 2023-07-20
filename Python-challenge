@@ -1,0 +1,75 @@
+# First we'll import the os module
+# This will allow us to create file paths across operating systems
+import os
+
+# Module for reading CSV files
+import csv
+
+# Python Library for math functutions. Found at https://www.w3schools.com/python/python_ml_mean_median_mode.asp
+import numpy
+
+#retrieve the data resource file
+csvpath = os.path.join("..", "nu1to3", "PyBank", "Resources", "budget_data.csv")
+
+#define my variables that will need to be calculated
+month_count = []
+profit = []
+change_in_profit = []
+
+#open the file as a csv file, and make the delimiter a comma
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+#display the csv data
+    print(csvreader)
+
+# Now that it is displayed, read the header row first
+    csv_header = next(csvreader)
+
+#display the header
+    print(f'CSV Header: {csv_header}')
+
+#  
+    for row in csvreader:
+        month_count.append(row[0])
+        profit.append(int(row[1]))
+    for i in range(len(profit)-1):
+        change_in_profit.append(profit[i+1]-profit[i])
+                      
+#evaluate the max and min from the list made. These functions were confirmed by https://www.w3schools.com/python/python_math.asp
+increase = max(change_in_profit)
+decrease = min(change_in_profit)
+
+#using the index (I used this article: https://www.simplilearn.com/tutorials/python-tutorial/index-in-python)
+month_increase = change_in_profit.index(max(change_in_profit))+1
+month_decrease = change_in_profit.index(min(change_in_profit))+1
+
+
+print("Financial Analysis")
+print("------------------------")
+print(f"Total Months:{len(month_count)}")
+print(f"Total: ${sum(profit)}")
+print(f"Average Change: {round(sum(change_in_profit)/len(change_in_profit),2)}")
+print(f"Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})")
+print(f"Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})")      
+
+
+#put the following information into a new text file
+output_file = os.path.join("bank informtion.txt")
+
+#override anything that is already in the file (using "w")
+f = open("bank information.txt", "w")
+f.write("Financial Analysis")
+#skip a line--I found how to do this at https://stackoverflow.com/questions/2918362/writing-string-to-a-file-on-a-new-line-every-time
+f.write("\n")
+f.write("------------------------")
+f.write("\n")
+f.write("number of months: " + str(month_count))
+f.write("\n")
+f.write("net total of profits or losses: $" +  str(sum(profit)))
+f.write("\n")
+f.write("Average Change: {round(sum(change_in_profit)/str(month_count),2)}")
+f.write("\n")
+f.write("Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})")
+f.write("\n")
+f.write("Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})")
