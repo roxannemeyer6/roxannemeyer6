@@ -34,6 +34,7 @@ with open(csvpath) as csvfile:
 
 #now I need it to loop through each row and tally, adding 1 tot the votes total
 #tracking the candidate name, and adding 1 vote to that candidate's total
+#NOTE: I keep getting an I/0 operation on closed file error here and could not resolve
 for row in csvreader:
     total_votes += 1
     candidate_name = row [2]
@@ -76,4 +77,3 @@ f.write("Winner: + {winning_candidate[winning_vote_count]}")
 f.write("\n")
 f.write("------------------------")
 f.write("\n")
-
