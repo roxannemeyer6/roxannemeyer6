@@ -9,7 +9,7 @@ import csv
 import numpy
 
 #retrieve the data resource file
-csvpath = os.path.join("..", "nu1to3", "PyBank", "Resources", "budget_data.csv")
+csvpath = os.path.join(".",r"C:\Users\roxan\OneDrive\Desktop\bootcamp\3 python\assignment Starter_Code\PyBank\Resources","budget_data.csv")
 
 #define my variables that will need to be calculated
 month_count = []
@@ -54,22 +54,14 @@ print(f"Greatest Increase in Profits: {month_count[month_increase]} (${(str(incr
 print(f"Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})")      
 
 
-#put the following information into a new text file
-output_file = os.path.join("bank informtion.txt")
+output_file = os.path.join(".", "bank information.txt")
+with open(output_file, "w") as textfile:
+    textfile.write("Financial Analysis")
+    textfile.write("-------------------------\n")
+    textfile.write(f"Total Months:{len(month_count)}\n")
+    textfile.write(f"Total: ${sum(profit)}\n")
+    textfile.write(f"Average Change: {round(sum(change_in_profit)/len(change_in_profit),2)}\n")
+    textfile.write(f"Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})\n")
+    textfile.write(f"Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})\n")    
 
-#override anything that is already in the file (using "w")
-f = open("bank information.txt", "w")
-f.write("Financial Analysis")
-#skip a line--I found how to do this at https://stackoverflow.com/questions/2918362/writing-string-to-a-file-on-a-new-line-every-time
-f.write("\n")
-f.write("------------------------")
-f.write("\n")
-f.write("number of months: " + str(month_count))
-f.write("\n")
-f.write("net total of profits or losses: $" +  str(sum(profit)))
-f.write("\n")
-f.write("Average Change: {round(sum(change_in_profit)/str(month_count),2)}")
-f.write("\n")
-f.write("Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})")
-f.write("\n")
-f.write("Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})")
+print("Results saved to bank information.txt")
