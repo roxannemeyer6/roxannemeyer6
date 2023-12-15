@@ -8,6 +8,13 @@ to calculate each of the following values:
     The greatest increase in profits (date and amount) over the entire period, and
     The greatest decrease in profits (date and amount) over the entire period. 
 My code then generates a text file with these results. 
+Financial Analysis
+------------------------
+Total Months:86
+Total: $22564198
+Average Change: -8311.11
+Greatest Increase in Profits: Aug-16 ($1862002)
+Greatest Decrease in Profits: Feb-14 ($-1825558)
 
 I was also tasked with creating a Python script to analyze the votes of a rural town. 
 The dataset is composed of three columns: "Voter ID", "County", and "Candidate". My task was to create a Python script 
