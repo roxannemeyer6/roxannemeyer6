@@ -26,3 +26,5 @@ Charles Casper Stockham: 23.048% (85213)
 Candidate: 0.000% (1)
 Diana DeGette: 73.812% (272892)
 Raymon Anthony Doane: 3.139% (11606)
+
+Please note that my vote tallies had 1 for a no name candidate. I believe there was a type accidentally made in my data.
