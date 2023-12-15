@@ -17,4 +17,12 @@ that analyzes the votes and calculates each of the following values:
     The percentage of votes each candidate won, 
     The total number of votes each candidate won, and
     The winner of the election based on popular vote.
-Unfortunately, my code did not work, as I could not figure out why at line 37 it says "I/0 operation on closed file". In searching online, it looks like my indentation is wrong or the file closed wrong. Regardless, I could not correct; however, I kept what I had been working on overall for grading consideration. 
+In the end I was able to calulate the following:
+Election Results
+-------------------------
+Total Votes: 369712
+-------------------------
+Charles Casper Stockham: 23.048% (85213)
+Candidate: 0.000% (1)
+Diana DeGette: 73.812% (272892)
+Raymon Anthony Doane: 3.139% (11606)
