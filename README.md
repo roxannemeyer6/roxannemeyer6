@@ -34,4 +34,4 @@ Candidate: 0.000% (1)
 Diana DeGette: 73.812% (272892)
 Raymon Anthony Doane: 3.139% (11606)
 
-Please note that my vote tallies had 1 for a no name candidate. I believe there was a type accidentally made in my data.
+Please note that my vote tallies had 1 for a no name candidate. I believe there was a typo accidentally made in my data.
